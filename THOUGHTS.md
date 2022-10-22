@@ -223,6 +223,12 @@ Timeline:
 
 [VIDEO](./assets/4hrs.mp4)
 
+
+
+
+https://user-images.githubusercontent.com/4246455/197362007-a76b56a8-7a1c-4fb8-b871-af763aad3333.mp4
+
+
 - Navigation. It would be better to have it in UIKit, but I spent less than a minute on that. In a real world would use FlowControllers in UIKit, use UISplitViewController
 - Master layout in SwiftUI. Had issues with navigation link placement, checked in example of TCA, I think it's okay now, but it SwiftUI, so not ideal. Should show something in details screen on app open in iPad where details is visible at start.
 - Details layout in UIKit. Showed how I control view state, how I transform domain model, add formatting and reconfigure views with stacks. Used a little of Auto Layout, but it's an easy one here. Would have problems with multiple labels placement, but it could be fixed with priorities. Or I could build a big NSAttributedString with text view, but lose possibility of placing labels on different edges :)
