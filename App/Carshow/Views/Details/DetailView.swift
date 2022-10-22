@@ -10,7 +10,7 @@ import CustomDump
 
 struct DetailView: View {
 
-    let car: CarResponse
+    let car: Car
 
     var body: some View {
         DetailsView(car: car)

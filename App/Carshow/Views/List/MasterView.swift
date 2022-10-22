@@ -7,23 +7,9 @@
 
 import SwiftUI
 
-struct AppState {
-    struct LoadedState {
-        var cars: [CarResponse] = []
-    }
-    enum LoadingState {
-        case loading
-        case loaded(LoadedState)
-        case failed(String)
-    }
-    var loadingState: LoadingState
-
-    static var initial: Self = .init(loadingState: .loading)
-}
-
 struct MasterView: View {
 
-    @State var state: AppState
+    @State var state: AppState = .initial
 
     var body: some View {
         Group {
@@ -34,13 +20,7 @@ struct MasterView: View {
                     Text(message)
                         .foregroundColor(.red)
                 case let .loaded(loadedState):
-                    List {
-                        ForEach(loadedState.cars) { car in
-                            NavigationLink {
-                                DetailView(car: car)
-                            } label: { CarRow(car: car) }
-                        }
-                    }
+                    list(loadedState)
             }
         }
         .navigationTitle("Master")
@@ -48,11 +28,28 @@ struct MasterView: View {
         .refreshable(action: load)
     }
 
+    @MainActor
+    func list(_ loadedState: AppState.LoadedState) -> some View {
+        List {
+            ForEach(loadedState.filteredCars, id: \.id.rawValue) { car in
+                NavigationLink {
+                    DetailView(car: car)
+                } label: { CarRow(car: car) }
+            }
+        }
+    }
+
     @Sendable private func load() async {
         do {
             self.state.loadingState = .loading
-            let cars = try await Networking.cars()
-            self.state.loadingState = .loaded(.init(cars: cars))
+            let carsResponse = try await Networking.cars()
+            let cars = carsResponse.map(Car.init)
+            self.state.loadingState = .loaded(
+                .init(
+                    searchText: nil,
+                    cars: cars
+                )
+            )
         } catch {
             self.state.loadingState = .failed(dumped(error))
         }

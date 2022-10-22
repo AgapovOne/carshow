@@ -116,8 +116,8 @@ final class DetailsViewController: UIViewController {
 }
 
 extension DetailsViewController.ViewState {
-    init(_ car: CarResponse) {
-        images = car.images?.compactMap { URL(string: $0.url) } ?? []
+    init(_ car: Car) {
+        images = car.images
         title = [car.make, car.model, car.colour.map { ($0 + car.emojiColour) }].compactMap { $0 }.joined(separator: " ")
         price = car.price.formatted(.currency(code: "EUR"))
 
@@ -147,7 +147,7 @@ extension DetailsViewController.ViewState {
 import SwiftUI
 
 struct DetailsView: UIViewControllerRepresentable {
-    let car: CarResponse
+    let car: Car
 
     func makeUIViewController(context: Context) -> DetailsViewController {
         DetailsViewController()

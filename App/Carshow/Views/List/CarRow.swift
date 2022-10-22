@@ -10,7 +10,7 @@ import Nuke
 import NukeUI
 
 struct CarRow: View {
-    let car: CarResponse
+    let car: Car
 
     var body: some View {
         HStack {
@@ -50,8 +50,7 @@ struct CarRow: View {
     func carImage() -> some View {
         Group {
             if
-                let image = car.images?.first?.url,
-                let url = URL(string: image)
+                let url = car.images.first
             {
                 LazyImage(url: url) { state in
                     if let image = state.image {
@@ -71,7 +70,7 @@ struct CarRow: View {
     }
 }
 
-extension CarResponse {
+extension Car {
     var emojiColour: String {
         switch colour {
             case "White":

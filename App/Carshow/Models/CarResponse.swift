@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct CarResponse: Decodable, Hashable, Identifiable {
+struct CarResponse: Decodable, Hashable {
     struct Seller: Decodable, Hashable {
         let type: String
         let phone: String

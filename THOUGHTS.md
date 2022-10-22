@@ -3,6 +3,7 @@
 - [0 Getting request, checking, making a drawings on all I got](#0-getting-request-checking-making-a-drawings-on-all-i-got)
 - [1 Creating an app, making first request inside it and display onscreen.](#1-creating-an-app-making-first-request-inside-it-and-display-onscreen)
 - [2 Prototyping UI](#2-prototyping-ui)
+- [3 Adding business logic](#3-adding-business-logic)
 
 ## User Story:
 
@@ -162,3 +163,23 @@ Will add a test on search/filter later too.
 By now it's 3hr 35min
 
 btw, image loading is done with [Nuke](https://github.com/kean/Nuke) and it's view components LazyImage, LazyImageView.
+
+---
+
+I guess it's time to
+
+## 3 Adding business logic
+
+Will add better UI stacks and other sugar for details screen later.
+
+Now it's time to add search/filter components and add business logic to filter/search
+
+CarResponse was OK till now, but usually I make models for each different layer and transform them around.
+
+API -> Database -> Domain -> View
+Usually it's like that. Model for each layer, where it's easier to manipulate with different types.
+API would use String almost everywhere cause it's JSON format.
+Domain would add total enums, remove impossible cases from model and add throwing/logging logic to know about issues in decoding/transforming to domain.
+Can elaborate in talk :)
+
+Now I'm going to write UI for search.
