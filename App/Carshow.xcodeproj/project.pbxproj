@@ -14,6 +14,13 @@
 		21D33A6E2903E507006B1962 /* CarshowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D33A6D2903E507006B1962 /* CarshowTests.swift */; };
 		21D33A782903E507006B1962 /* CarshowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D33A772903E507006B1962 /* CarshowUITests.swift */; };
 		21D33A7A2903E507006B1962 /* CarshowUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D33A792903E507006B1962 /* CarshowUITestsLaunchTests.swift */; };
+		21D33A882903E790006B1962 /* Get in Frameworks */ = {isa = PBXBuildFile; productRef = 21D33A872903E790006B1962 /* Get */; };
+		21D33A8B2903E7EA006B1962 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D33A8A2903E7EA006B1962 /* Networking.swift */; };
+		21D33AC62903F071006B1962 /* MasterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D33AC52903F071006B1962 /* MasterView.swift */; };
+		21D33AC82903F07D006B1962 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D33AC72903F07D006B1962 /* DetailView.swift */; };
+		21D33ACE2903F685006B1962 /* CustomDump in Frameworks */ = {isa = PBXBuildFile; productRef = 21D33ACD2903F685006B1962 /* CustomDump */; };
+		21D33AD02903F7BC006B1962 /* CarResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D33ACF2903F7BC006B1962 /* CarResponse.swift */; };
+		21D33AD22903F8CB006B1962 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D33AD12903F8CB006B1962 /* Helpers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +52,11 @@
 		21D33A732903E507006B1962 /* CarshowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CarshowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D33A772903E507006B1962 /* CarshowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarshowUITests.swift; sourceTree = "<group>"; };
 		21D33A792903E507006B1962 /* CarshowUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarshowUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		21D33A8A2903E7EA006B1962 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		21D33AC52903F071006B1962 /* MasterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterView.swift; sourceTree = "<group>"; };
+		21D33AC72903F07D006B1962 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		21D33ACF2903F7BC006B1962 /* CarResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarResponse.swift; sourceTree = "<group>"; };
+		21D33AD12903F8CB006B1962 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,6 +64,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21D33A882903E790006B1962 /* Get in Frameworks */,
+				21D33ACE2903F685006B1962 /* CustomDump in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,8 +109,10 @@
 		21D33A5A2903E506006B1962 /* Carshow */ = {
 			isa = PBXGroup;
 			children = (
+				21D33A892903E7DB006B1962 /* Services */,
+				21D33AD32903F8CD006B1962 /* Views */,
+				21D33AD42903F8D8006B1962 /* Helpers */,
 				21D33A5B2903E506006B1962 /* CarshowApp.swift */,
-				21D33A5D2903E506006B1962 /* ContentView.swift */,
 				21D33A5F2903E507006B1962 /* Assets.xcassets */,
 				21D33A612903E507006B1962 /* Carshow.entitlements */,
 				21D33A622903E507006B1962 /* Preview Content */,
@@ -129,6 +145,33 @@
 			path = CarshowUITests;
 			sourceTree = "<group>";
 		};
+		21D33A892903E7DB006B1962 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				21D33A8A2903E7EA006B1962 /* Networking.swift */,
+				21D33ACF2903F7BC006B1962 /* CarResponse.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		21D33AD32903F8CD006B1962 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				21D33A5D2903E506006B1962 /* ContentView.swift */,
+				21D33AC52903F071006B1962 /* MasterView.swift */,
+				21D33AC72903F07D006B1962 /* DetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		21D33AD42903F8D8006B1962 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				21D33AD12903F8CB006B1962 /* Helpers.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,6 +188,10 @@
 			dependencies = (
 			);
 			name = Carshow;
+			packageProductDependencies = (
+				21D33A872903E790006B1962 /* Get */,
+				21D33ACD2903F685006B1962 /* CustomDump */,
+			);
 			productName = Carshow;
 			productReference = 21D33A582903E506006B1962 /* Carshow.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +264,10 @@
 				Base,
 			);
 			mainGroup = 21D33A4F2903E506006B1962;
+			packageReferences = (
+				21D33A862903E790006B1962 /* XCRemoteSwiftPackageReference "Get" */,
+				21D33ACC2903F685006B1962 /* XCRemoteSwiftPackageReference "swift-custom-dump" */,
+			);
 			productRefGroup = 21D33A592903E506006B1962 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -259,8 +310,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21D33A8B2903E7EA006B1962 /* Networking.swift in Sources */,
+				21D33AD22903F8CB006B1962 /* Helpers.swift in Sources */,
 				21D33A5E2903E506006B1962 /* ContentView.swift in Sources */,
+				21D33AC62903F071006B1962 /* MasterView.swift in Sources */,
+				21D33AC82903F07D006B1962 /* DetailView.swift in Sources */,
 				21D33A5C2903E506006B1962 /* CarshowApp.swift in Sources */,
+				21D33AD02903F7BC006B1962 /* CarResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +475,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Carshow/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -429,7 +486,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
@@ -457,6 +514,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Carshow/Info.plist;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -467,7 +525,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 12.3;
@@ -612,6 +670,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		21D33A862903E790006B1962 /* XCRemoteSwiftPackageReference "Get" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Get.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+		21D33ACC2903F685006B1962 /* XCRemoteSwiftPackageReference "swift-custom-dump" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-custom-dump.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		21D33A872903E790006B1962 /* Get */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21D33A862903E790006B1962 /* XCRemoteSwiftPackageReference "Get" */;
+			productName = Get;
+		};
+		21D33ACD2903F685006B1962 /* CustomDump */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21D33ACC2903F685006B1962 /* XCRemoteSwiftPackageReference "swift-custom-dump" */;
+			productName = CustomDump;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 21D33A502903E506006B1962 /* Project object */;
 }
