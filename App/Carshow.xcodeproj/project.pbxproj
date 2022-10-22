@@ -10,6 +10,8 @@
 		21745D4C2904068A000CB6EA /* CarRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21745D4B2904068A000CB6EA /* CarRow.swift */; };
 		21745D4F29040736000CB6EA /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 21745D4E29040736000CB6EA /* Nuke */; };
 		21745D52290407CB000CB6EA /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 21745D51290407CB000CB6EA /* NukeUI */; };
+		2197703D290469AD00C092C1 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2197703C290469AD00C092C1 /* DetailsViewController.swift */; };
+		2197704029046F0100C092C1 /* Align in Frameworks */ = {isa = PBXBuildFile; productRef = 2197703F29046F0100C092C1 /* Align */; };
 		21D33A5C2903E506006B1962 /* CarshowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D33A5B2903E506006B1962 /* CarshowApp.swift */; };
 		21D33A5E2903E506006B1962 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D33A5D2903E506006B1962 /* ContentView.swift */; };
 		21D33A602903E507006B1962 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21D33A5F2903E507006B1962 /* Assets.xcassets */; };
@@ -45,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		21745D4B2904068A000CB6EA /* CarRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRow.swift; sourceTree = "<group>"; };
+		2197703C290469AD00C092C1 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		21D33A582903E506006B1962 /* Carshow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carshow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D33A5B2903E506006B1962 /* CarshowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarshowApp.swift; sourceTree = "<group>"; };
 		21D33A5D2903E506006B1962 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -68,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2197704029046F0100C092C1 /* Align in Frameworks */,
 				21745D4F29040736000CB6EA /* Nuke in Frameworks */,
 				21D33A882903E790006B1962 /* Get in Frameworks */,
 				21D33ACE2903F685006B1962 /* CustomDump in Frameworks */,
@@ -97,6 +101,24 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2197703A2904688500C092C1 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				21D33AC52903F071006B1962 /* MasterView.swift */,
+				21745D4B2904068A000CB6EA /* CarRow.swift */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		2197703B2904688E00C092C1 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				21D33AC72903F07D006B1962 /* DetailView.swift */,
+				2197703C290469AD00C092C1 /* DetailsViewController.swift */,
+			);
+			path = Details;
 			sourceTree = "<group>";
 		};
 		21D33A4F2903E506006B1962 = {
@@ -172,9 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				21D33A5D2903E506006B1962 /* ContentView.swift */,
-				21D33AC52903F071006B1962 /* MasterView.swift */,
-				21745D4B2904068A000CB6EA /* CarRow.swift */,
-				21D33AC72903F07D006B1962 /* DetailView.swift */,
+				2197703B2904688E00C092C1 /* Details */,
+				2197703A2904688500C092C1 /* List */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -208,6 +229,7 @@
 				21D33ACD2903F685006B1962 /* CustomDump */,
 				21745D4E29040736000CB6EA /* Nuke */,
 				21745D51290407CB000CB6EA /* NukeUI */,
+				2197703F29046F0100C092C1 /* Align */,
 			);
 			productName = Carshow;
 			productReference = 21D33A582903E506006B1962 /* Carshow.app */;
@@ -285,6 +307,7 @@
 				21D33A862903E790006B1962 /* XCRemoteSwiftPackageReference "Get" */,
 				21D33ACC2903F685006B1962 /* XCRemoteSwiftPackageReference "swift-custom-dump" */,
 				21745D4D29040736000CB6EA /* XCRemoteSwiftPackageReference "Nuke" */,
+				2197703E29046F0100C092C1 /* XCRemoteSwiftPackageReference "Align" */,
 			);
 			productRefGroup = 21D33A592903E506006B1962 /* Products */;
 			projectDirPath = "";
@@ -330,6 +353,7 @@
 			files = (
 				21D33A8B2903E7EA006B1962 /* Networking.swift in Sources */,
 				21D33AD22903F8CB006B1962 /* Helpers.swift in Sources */,
+				2197703D290469AD00C092C1 /* DetailsViewController.swift in Sources */,
 				21D33A5E2903E506006B1962 /* ContentView.swift in Sources */,
 				21D33AC62903F071006B1962 /* MasterView.swift in Sources */,
 				21D33AC82903F07D006B1962 /* DetailView.swift in Sources */,
@@ -513,7 +537,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.agapovco.Carshow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -552,7 +578,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.agapovco.Carshow;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -699,6 +727,14 @@
 				minimumVersion = 11.0.0;
 			};
 		};
+		2197703E29046F0100C092C1 /* XCRemoteSwiftPackageReference "Align" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Align.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		21D33A862903E790006B1962 /* XCRemoteSwiftPackageReference "Get" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kean/Get.git";
@@ -727,6 +763,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 21745D4D29040736000CB6EA /* XCRemoteSwiftPackageReference "Nuke" */;
 			productName = NukeUI;
+		};
+		2197703F29046F0100C092C1 /* Align */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2197703E29046F0100C092C1 /* XCRemoteSwiftPackageReference "Align" */;
+			productName = Align;
 		};
 		21D33A872903E790006B1962 /* Get */ = {
 			isa = XCSwiftPackageProductDependency;

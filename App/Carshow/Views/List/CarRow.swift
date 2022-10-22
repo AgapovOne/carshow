@@ -14,25 +14,7 @@ struct CarRow: View {
 
     var body: some View {
         HStack {
-            Group {
-                if
-                    let image = car.images?.first?.url,
-                    let url = URL(string: image)
-                {
-                    LazyImage(url: url) { state in
-                        if let image = state.image {
-                            image.resizingMode(.aspectFill)
-                        } else if state.error != nil {
-                            Color.red
-                        } else {
-                            ProgressView()
-                        }
-                    }
-                } else {
-                    Text("📷")
-                }
-            }
-            .frame(width: 60)
+            carImage()
             VStack(alignment: .leading) {
                 HStack {
                     Text(car.emojiColour + (car.colour ?? ""))
@@ -61,6 +43,31 @@ struct CarRow: View {
                 .buttonStyle(.bordered)
             }
         }
+        .padding(.vertical, 8)
+    }
+
+    @MainActor
+    func carImage() -> some View {
+        Group {
+            if
+                let image = car.images?.first?.url,
+                let url = URL(string: image)
+            {
+                LazyImage(url: url) { state in
+                    if let image = state.image {
+                        image.resizingMode(.aspectFill)
+                    } else if state.error != nil {
+                        Color.red
+                    } else {
+                        ProgressView()
+                    }
+                }
+            } else {
+                Text("📷")
+            }
+        }
+        .frame(width: 60)
+        .cornerRadius(8)
     }
 }
 
@@ -79,6 +86,11 @@ extension CarResponse {
 
 struct CarRow_Previews: PreviewProvider {
     static var previews: some View {
-        CarRow(car: .example(id: 0))
+        List {
+            CarRow(car: .example(id: 0))
+                .padding(5)
+                .background(Color.blue)
+        }
+            .background(Color.red)
     }
 }

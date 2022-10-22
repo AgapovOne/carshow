@@ -132,5 +132,25 @@ I'll start with state definition without any architecture for now
 
 Checked docs, composable architecture for example on nav, handled mess with navigation link.
 
+2hrs 30mins already passed
+
+...
+
 Made master screen with SwiftUI.
 Will make details with UIKit
+
+Navigation is now in SwiftUI, but probably I should rewrite it to UIKit that I can control well) No time for that for now.
+
+Next steps should be:
+
+- Details screen UI in UIKit
+- Filter/search UI in List
+- Filter/search logic in List
+  - Should I rewrite to TCA? :)
+  - Or it would be enough to just do some functions where I would control complexity with pureness. Will see.
+
+Started working on UIKit Details version. Won't have time for carousel so would make stacks :)
+
+Did use kean/Align cause I like it interface for speed. Made easy scrollable stack view
+
+Decided to write a small test for view state builder and then improve it

@@ -1,6 +1,15 @@
 {
   "pins" : [
     {
+      "identity" : "align",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/kean/Align.git",
+      "state" : {
+        "revision" : "f4ac7f88ccf10161802c42a116ae6226612e1592",
+        "version" : "3.0.0"
+      }
+    },
+    {
       "identity" : "get",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/kean/Get.git",

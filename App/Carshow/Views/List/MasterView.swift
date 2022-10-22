@@ -44,14 +44,17 @@ struct MasterView: View {
             }
         }
         .navigationTitle("Master")
-        .task {
-            do {
-                self.state.loadingState = .loading
-                let cars = try await Networking.cars()
-                self.state.loadingState = .loaded(.init(cars: cars))
-            } catch {
-                self.state.loadingState = .failed(dumped(error))
-            }
+        .task(load)
+        .refreshable(action: load)
+    }
+
+    @Sendable private func load() async {
+        do {
+            self.state.loadingState = .loading
+            let cars = try await Networking.cars()
+            self.state.loadingState = .loaded(.init(cars: cars))
+        } catch {
+            self.state.loadingState = .failed(dumped(error))
         }
     }
 }

@@ -13,9 +13,7 @@ struct DetailView: View {
     let car: CarResponse
 
     var body: some View {
-        VStack {
-            Text(dumped(car))
-        }
+        DetailsView(car: car)
     }
 }
 

@@ -5,8 +5,8 @@
 //  Created by Alexey Agapov on 22.10.2022.
 //
 
-import UIKit
 import CustomDump
+import UIKit
 
 func dumped<T>(_ value: T) -> String {
     var desc = ""
@@ -24,4 +24,14 @@ func call(_ phone: String) {
     }
     print("called \(phone)")
     UIApplication.shared.open(url)
+}
+
+func update<A>(_ a: inout A, _ fs: ((inout A) -> Void)...) {
+    fs.forEach { f in f(&a) }
+}
+
+func update<A>(_ a: A, _ fs: ((inout A) -> Void)...) -> A {
+    var a = a
+    fs.forEach { f in f(&a) }
+    return a
 }
