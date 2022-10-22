@@ -211,3 +211,4 @@ Timeline:
 - [ ] 00:20 finished test
 - [ ] 120+20+50+25=215. 3hrs 35 mins
 - [ ] 00:31 start
+- [ ] 01:06 pause. mark 4 hrs of clean work time
