@@ -72,7 +72,7 @@ App is network based
 
 I do want to use async await, kean/Get because I like it for simplicity. Could be simple URLSession too, but I just want to try libs I wanted to try for some time. Hope it's okay. I do see we don't need to overcomplicate, but I believe kean/Get would let me go as fast as with simple URLSession.
 
-Will use TCA probably, cause want to use it in production right now. It will provide me with
+Will use [TCA](https://github.com/pointfreeco/swift-composable-architecture) probably, cause want to use it in production right now. It will provide me with
 
 - View layer logic
 - Testability of logic (though I would probably need only hard filtering, not anything else)
@@ -114,7 +114,7 @@ And in Capabilities -> Outgoing connections (Client):
 
 After fixes found out colour field is not in json spec too. Had to change it to optional.
 
-Added swift-custom-dump module for better messages. It was fast.
+Added [swift-custom-dump](https://github.com/pointfreeco/swift-custom-dump) module for better messages. It was fast.
 
 firstRegistration in spec is required, but it's actually not present in every item.
 
@@ -151,6 +151,14 @@ Next steps should be:
 
 Started working on UIKit Details version. Won't have time for carousel so would make stacks :)
 
-Did use kean/Align cause I like it interface for speed. Made easy scrollable stack view
+Did use [kean/Align](https://github.com/kean/Align) cause I like it interface for speed. Made easy scrollable stack view
 
-Decided to write a small test for view state builder and then improve it
+Decided to write a small test for view state init and then add more info in it. It's a pure function so it's easy to test and good to lock it's transofrmation as a snapshot.
+
+Used custom dump with diff for tests
+
+Will add a test on search/filter later too.
+
+By now it's 3hr 35min
+
+btw, image loading is done with [Nuke](https://github.com/kean/Nuke) and it's view components LazyImage, LazyImageView.

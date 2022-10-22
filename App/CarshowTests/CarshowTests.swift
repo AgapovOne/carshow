@@ -12,6 +12,7 @@ import CustomDump
 final class CarshowTests: XCTestCase {
 
     func test_viewStateBuilder() {
+        // Tests are fixed to Germany, English
         let viewState = DetailsViewController.ViewState(
             .init(
                 id: 0,
@@ -32,11 +33,11 @@ final class CarshowTests: XCTestCase {
             viewState,
             .init(
                 images: [URL(string: "http://placekitten.com/200/300")! ],
-                title: "Suzuki Vitara ⚪️ White",
-                price: "10,000 €",
-                mileage: "10,000 km",
-                date: "01 2001",
-                seller: "Someone"
+                title: "Suzuki Vitara White🚐",
+                price: "10.000,00 €",
+                mileage: "10.000 km",
+                date: "Jan 01",
+                seller: "someone"
             )
         )
     }
