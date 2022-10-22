@@ -10,30 +10,19 @@ import CustomDump
 
 struct DetailView: View {
 
-    @State var cars: [CarResponse] = []
+    let car: CarResponse
 
     var body: some View {
         VStack {
-            Text("Detail")
-            List {
-                ForEach(cars) { car in
-                    Text(dumped(car))
-                }
-            }
-        }
-        .task {
-            do {
-                let cars = try await Networking.cars()
-                self.cars = cars
-            } catch {
-                fatalError(dumped(error))
-            }
+            Text(dumped(car))
         }
     }
 }
 
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailView(cars: [])
+        DetailView(
+            car: .example(id: 0)
+        )
     }
 }

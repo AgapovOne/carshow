@@ -2,6 +2,7 @@
 - [Preface](#preface)
 - [0 Getting request, checking, making a drawings on all I got](#0-getting-request-checking-making-a-drawings-on-all-i-got)
 - [1 Creating an app, making first request inside it and display onscreen.](#1-creating-an-app-making-first-request-inside-it-and-display-onscreen)
+- [2 Prototyping UI](#2-prototyping-ui)
 
 ## User Story:
 
@@ -124,3 +125,12 @@ So it's:
 
 Result of first step is actually checking data is coming with macOS app :)
 ![](./assets/1-mac.png) ![](./assets/1-iphone.png) ![](./assets/1-ipad.png)
+
+## 2 Prototyping UI
+
+I'll start with state definition without any architecture for now
+
+Checked docs, composable architecture for example on nav, handled mess with navigation link.
+
+Made master screen with SwiftUI.
+Will make details with UIKit

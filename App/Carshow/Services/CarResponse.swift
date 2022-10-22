@@ -28,4 +28,20 @@ struct CarResponse: Decodable, Hashable, Identifiable {
     let seller: Seller?
     let images: [ImageURL]?
     let description: String
+
+    static func example(id: Int) -> Self {
+        .init(
+            id: id,
+            make: "Ford",
+            model: "Mondeo",
+            colour: nil,
+            price: 30000,
+            mileage: 15000,
+            firstRegistration: nil,
+            fuel: "Diesel",
+            seller: .init(type: "Private", phone: "+79992223344", city: "Yekaterinburg"),
+            images: [],
+            description: "Desc"
+        )
+    }
 }

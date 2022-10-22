@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		21745D4C2904068A000CB6EA /* CarRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21745D4B2904068A000CB6EA /* CarRow.swift */; };
+		21745D4F29040736000CB6EA /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = 21745D4E29040736000CB6EA /* Nuke */; };
+		21745D52290407CB000CB6EA /* NukeUI in Frameworks */ = {isa = PBXBuildFile; productRef = 21745D51290407CB000CB6EA /* NukeUI */; };
 		21D33A5C2903E506006B1962 /* CarshowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D33A5B2903E506006B1962 /* CarshowApp.swift */; };
 		21D33A5E2903E506006B1962 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21D33A5D2903E506006B1962 /* ContentView.swift */; };
 		21D33A602903E507006B1962 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21D33A5F2903E507006B1962 /* Assets.xcassets */; };
@@ -41,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		21745D4B2904068A000CB6EA /* CarRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRow.swift; sourceTree = "<group>"; };
 		21D33A582903E506006B1962 /* Carshow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Carshow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		21D33A5B2903E506006B1962 /* CarshowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarshowApp.swift; sourceTree = "<group>"; };
 		21D33A5D2903E506006B1962 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -64,8 +68,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21745D4F29040736000CB6EA /* Nuke in Frameworks */,
 				21D33A882903E790006B1962 /* Get in Frameworks */,
 				21D33ACE2903F685006B1962 /* CustomDump in Frameworks */,
+				21745D52290407CB000CB6EA /* NukeUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +92,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		21745D50290407CB000CB6EA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		21D33A4F2903E506006B1962 = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +106,7 @@
 				21D33A6C2903E507006B1962 /* CarshowTests */,
 				21D33A762903E507006B1962 /* CarshowUITests */,
 				21D33A592903E506006B1962 /* Products */,
+				21745D50290407CB000CB6EA /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -159,6 +173,7 @@
 			children = (
 				21D33A5D2903E506006B1962 /* ContentView.swift */,
 				21D33AC52903F071006B1962 /* MasterView.swift */,
+				21745D4B2904068A000CB6EA /* CarRow.swift */,
 				21D33AC72903F07D006B1962 /* DetailView.swift */,
 			);
 			path = Views;
@@ -191,6 +206,8 @@
 			packageProductDependencies = (
 				21D33A872903E790006B1962 /* Get */,
 				21D33ACD2903F685006B1962 /* CustomDump */,
+				21745D4E29040736000CB6EA /* Nuke */,
+				21745D51290407CB000CB6EA /* NukeUI */,
 			);
 			productName = Carshow;
 			productReference = 21D33A582903E506006B1962 /* Carshow.app */;
@@ -267,6 +284,7 @@
 			packageReferences = (
 				21D33A862903E790006B1962 /* XCRemoteSwiftPackageReference "Get" */,
 				21D33ACC2903F685006B1962 /* XCRemoteSwiftPackageReference "swift-custom-dump" */,
+				21745D4D29040736000CB6EA /* XCRemoteSwiftPackageReference "Nuke" */,
 			);
 			productRefGroup = 21D33A592903E506006B1962 /* Products */;
 			projectDirPath = "";
@@ -315,6 +333,7 @@
 				21D33A5E2903E506006B1962 /* ContentView.swift in Sources */,
 				21D33AC62903F071006B1962 /* MasterView.swift in Sources */,
 				21D33AC82903F07D006B1962 /* DetailView.swift in Sources */,
+				21745D4C2904068A000CB6EA /* CarRow.swift in Sources */,
 				21D33A5C2903E506006B1962 /* CarshowApp.swift in Sources */,
 				21D33AD02903F7BC006B1962 /* CarResponse.swift in Sources */,
 			);
@@ -672,6 +691,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		21745D4D29040736000CB6EA /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 11.0.0;
+			};
+		};
 		21D33A862903E790006B1962 /* XCRemoteSwiftPackageReference "Get" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kean/Get.git";
@@ -691,6 +718,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		21745D4E29040736000CB6EA /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21745D4D29040736000CB6EA /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
+		21745D51290407CB000CB6EA /* NukeUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 21745D4D29040736000CB6EA /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = NukeUI;
+		};
 		21D33A872903E790006B1962 /* Get */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 21D33A862903E790006B1962 /* XCRemoteSwiftPackageReference "Get" */;
