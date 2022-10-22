@@ -4,6 +4,7 @@
 - [1 Creating an app, making first request inside it and display onscreen.](#1-creating-an-app-making-first-request-inside-it-and-display-onscreen)
 - [2 Prototyping UI](#2-prototyping-ui)
 - [3 Adding business logic](#3-adding-business-logic)
+- [What's done after 4 hrs](#whats-done-after-4-hrs)
 
 ## User Story:
 
@@ -99,7 +100,7 @@ Filled a Decodable model using json spec.
 <details><summary>How I fixed issues with ATS</summary>
 
 Changed url to use https, not http as given in email.
-	
+
 Fixed in Info.plist:
 
 ```xml
@@ -117,6 +118,7 @@ Fixed in Info.plist:
 
 And in Capabilities -> Outgoing connections (Client):
 ![](./assets/capabilities.png)
+
 </details>
 
 After fixes found out `colour` field is not in json spec too. Had to change it to optional.
@@ -131,8 +133,9 @@ So it's:
 - Spec marks `firstRegistration` as required, but it's optional.
 
 Result of first step is actually checking data is coming with macOS app :)
+
 <details><summary>Screenshots</summary>
-<img src="./assets/1-mac.png"/> 
+<img src="./assets/1-mac.png"/>
 <img src="./assets/1-iphone.png"/>
 <img src="./assets/1-ipad.png"/>
 </details>
@@ -197,6 +200,7 @@ Now I'm going to write UI for search.
 Commit [fcf581883b7daf142ba583c6033a09159986f415](https://github.com/AgapovOne/carshow/commit/fcf581883b7daf142ba583c6033a09159986f415) is exactly 4 hrs of work.
 
 Timeline:
+
 - [ ] Start 13:45
 - [ ] Pause at 14:15
 - [ ] Continued at 14:35
@@ -212,3 +216,21 @@ Timeline:
 - [ ] 120+20+50+25=215. 3hrs 35 mins
 - [ ] 00:31 start
 - [ ] 01:06 pause. mark 4 hrs of clean work time
+
+---
+
+## What's done after 4 hrs
+
+[VIDEO](./assets/4hrs.mp4)
+
+- Navigation. It would be better to have it in UIKit, but I spent less than a minute on that. In a real world would use FlowControllers in UIKit, use UISplitViewController
+- Master layout in SwiftUI. Had issues with navigation link placement, checked in example of TCA, I think it's okay now, but it SwiftUI, so not ideal. Should show something in details screen on app open in iPad where details is visible at start.
+- Details layout in UIKit. Showed how I control view state, how I transform domain model, add formatting and reconfigure views with stacks. Used a little of Auto Layout, but it's an easy one here. Would have problems with multiple labels placement, but it could be fixed with priorities. Or I could build a big NSAttributedString with text view, but lose possibility of placing labels on different edges :)
+- Added simple test. Might be redundant, just wanted to show I do them, but it's useless for example project. Would add it on real project, cause it fixes behaviour so no other dev would break it by mistake.
+
+What's left:
+
+- UI for search/filtering. It should be search bar and button with a form and two text fields on min and max car price. Everything else could not fit into 4-6 hrs of work.
+- Logic for search/filtering. I won't use TCA for now cause all logic actually is setting search text, then filtering app state cars with get property. Filtering is already done. Hard rules for filters could be there, like multiple case insensitive contains, fuzzy search, filtering by price range. Would add a test for that, but it's all about input and output. Too easy to test in that size of an application.
+- Better UI :) Sky is the limit. Probably not needed, cause I showed a lot. Can add uilabel placement and avoid all warnings. Also clean up a little. Navbars, prettiness of current views,
+- View states. Error, loading, empty, message displays.
