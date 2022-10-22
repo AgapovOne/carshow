@@ -16,10 +16,12 @@ No design
 
 ## Preface
 
-I consider our current feedback loop to be slow, so I would rather not come back for details. Just making my assumptions and declare some points in this file.
+I consider our current feedback loop to be slow, so I would rather not come for details. Just making my assumptions and declare some points in this file.
 
 - Backend is out of my boundaries. I consider it a third party service where I can't change anything right now
   - In my daily job I would of course start with discussion about the user story, provided data from a backend and what would be useful.
+- I wanted to become a designer, but it's not my daily job and I didn't practice for years, so I think my process of making UI would be better with SwiftUI/UIKit prototyping in an app, not tldraw/figma or anything else
+- I'll try to make it in 4 hrs with timeline
 
 ## 0 Getting request, checking, making a drawings on all I got
 
@@ -94,7 +96,10 @@ Filled a Decodable model using json spec.
 - Spec doesn't include Seller model. Why? Filled with data I saw in response
 - API resource is not secure, so I had to add App Transport Security into Info.plist
   - Taking long, cause just allowing everything doesn't work. Have to spend time on this.
+<details><summary>How I fixed issues with ATS</summary>
 
+Changed url to use https, not http as given in email.
+	
 Fixed in Info.plist:
 
 ```xml
@@ -112,8 +117,9 @@ Fixed in Info.plist:
 
 And in Capabilities -> Outgoing connections (Client):
 ![](./assets/capabilities.png)
+</details>
 
-After fixes found out colour field is not in json spec too. Had to change it to optional.
+After fixes found out `colour` field is not in json spec too. Had to change it to optional.
 
 Added [swift-custom-dump](https://github.com/pointfreeco/swift-custom-dump) module for better messages. It was fast.
 
@@ -121,11 +127,15 @@ firstRegistration in spec is required, but it's actually not present in every it
 
 So it's:
 
-- Spec doesn't include Seller, colour
-- Spec marks firstRegistration as required, but it's optional.
+- Spec doesn't include `Seller`, `colour`
+- Spec marks `firstRegistration` as required, but it's optional.
 
 Result of first step is actually checking data is coming with macOS app :)
-![](./assets/1-mac.png) ![](./assets/1-iphone.png) ![](./assets/1-ipad.png)
+<details><summary>Screenshots</summary>
+<img src="./assets/1-mac.png"/> 
+<img src="./assets/1-iphone.png"/>
+<img src="./assets/1-ipad.png"/>
+</details>
 
 ## 2 Prototyping UI
 
@@ -185,3 +195,19 @@ Can elaborate in talk :)
 Now I'm going to write UI for search.
 
 Commit [fcf581883b7daf142ba583c6033a09159986f415](https://github.com/AgapovOne/carshow/commit/fcf581883b7daf142ba583c6033a09159986f415) is exactly 4 hrs of work.
+
+Timeline:
+- [ ] Start 13:45
+- [ ] Pause at 14:15
+- [ ] Continued at 14:35
+- [ ] 15:15 pause
+- [ ] 15:25 continued
+- [ ] 16:16 paused
+- [ ] 30+40+50=120
+- [ ] 20 min +
+- [ ] 23:03 start
+- [ ] 23:53 pause
+- [ ] 23:56 continue
+- [ ] 00:20 finished test
+- [ ] 120+20+50+25=215. 3hrs 35 mins
+- [ ] 00:31 start
