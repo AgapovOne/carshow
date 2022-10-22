@@ -183,3 +183,5 @@ Domain would add total enums, remove impossible cases from model and add throwin
 Can elaborate in talk :)
 
 Now I'm going to write UI for search.
+
+Commit [fcf581883b7daf142ba583c6033a09159986f415](https://github.com/AgapovOne/carshow/commit/fcf581883b7daf142ba583c6033a09159986f415) is exactly 4 hrs of work.
