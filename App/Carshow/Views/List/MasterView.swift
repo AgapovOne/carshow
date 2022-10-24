@@ -48,6 +48,13 @@ struct MasterView: View {
             }
             state.loadingState.loadedState?.filter?.searchText = $0
         })
+        .navigationBarItems(trailing: {
+            loadedState.sort.view
+                .foregroundColor(.accentColor)
+                .onTapGesture {
+                    state.loadingState.loadedState?.sort = loadedState.sort.next
+                }
+        }())
     }
 
     @Sendable private func load() async {
@@ -58,7 +65,7 @@ struct MasterView: View {
             self.state.loadingState = .loaded(
                 .init(
                     filter: nil,
-                    sort: nil,
+                    sort: .default,
                     cars: cars
                 )
             )
@@ -67,6 +74,38 @@ struct MasterView: View {
         }
     }
 }
+
+extension AppState.Sort {
+    var next: Self {
+        switch self {
+            case .default:
+                return .makeAlphabetically(ascending: true)
+            case .makeAlphabetically(let ascending):
+                return ascending ? .makeAlphabetically(ascending: false) : .price(ascending: true)
+            case .price(let ascending):
+                return ascending ? .price(ascending: false) : .default
+        }
+    }
+
+    @MainActor
+    var view: some View {
+        HStack {
+            switch self {
+                case .default:
+                    Text("SORT")
+                case .makeAlphabetically(let ascending):
+                    Image(systemName: "textformat.abc")
+                    Image(systemName: ascending ? "arrow.up.forward" : "arrow.down.forward")
+                        .imageScale(.small)
+                case .price(let ascending):
+                    Image(systemName: "eurosign")
+                    Image(systemName: ascending ? "arrow.up.forward" : "arrow.down.forward")
+                        .imageScale(.small)
+            }
+        }
+    }
+}
+
 
 struct MasterView_Previews: PreviewProvider {
     static var previews: some View {

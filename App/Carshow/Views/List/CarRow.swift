@@ -61,6 +61,7 @@ struct CarRow: View {
                         ProgressView()
                     }
                 }
+                .frame(maxHeight: .infinity)
             } else {
                 Text("📷")
             }

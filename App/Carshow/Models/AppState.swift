@@ -22,11 +22,14 @@ struct AppState {
     }
 
     enum Sort {
+        case `default`
         case makeAlphabetically(ascending: Bool)
         case price(ascending: Bool)
 
         func apply(to cars: [Car]) -> [Car] {
             switch self {
+                case .default:
+                    return cars
                 case let .makeAlphabetically(ascending):
                     return cars.sorted(by: { ascending ? $0.make < $1.make : $0.make > $1.make })
                 case let .price(ascending):
@@ -37,12 +40,12 @@ struct AppState {
 
     struct LoadedState {
         var filter: Filter?
-        var sort: Sort?
+        var sort: Sort
         var cars: [Car] = []
 
         var displayedCars: [Car] {
             let filteredCars = filter.map { filters in cars.filter { filters.apply(to: $0) } } ?? cars
-            return sort.map { $0.apply(to: filteredCars) } ?? filteredCars
+            return sort.apply(to: filteredCars)
         }
     }
     enum LoadingState {
