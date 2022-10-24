@@ -59,7 +59,6 @@ struct MasterView: View {
 
     @Sendable private func load() async {
         do {
-            self.state.loadingState = .loading
             let carsResponse = try await Networking.cars()
             let cars = carsResponse.map(Car.init)
             self.state.loadingState = .loaded(
