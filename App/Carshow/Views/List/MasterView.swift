@@ -17,8 +17,10 @@ struct MasterView: View {
                 case .loading:
                     ProgressView()
                 case let .failed(message):
-                    Text(message)
-                        .foregroundColor(.red)
+                    ScrollView {
+                        Text(message)
+                            .foregroundColor(.red)
+                    }
                 case let .loaded(loadedState):
                     list(loadedState)
             }
@@ -37,6 +39,15 @@ struct MasterView: View {
                 } label: { CarRow(car: car) }
             }
         }
+        .searchable(text: Binding {
+            loadedState.filter?.searchText ?? ""
+        } set: {
+            let loadedState = state.loadingState.loadedState
+            if loadedState?.filter == nil {
+                state.loadingState.loadedState?.filter = .init()
+            }
+            state.loadingState.loadedState?.filter?.searchText = $0
+        })
     }
 
     @Sendable private func load() async {

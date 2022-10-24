@@ -253,3 +253,14 @@ Reread the task. It says **enough information to decide which one is best**.
 So probably favourites is not the best idea, but sorting, filtering, searching might help a lot.
 
 So I'll take on the task of making search, filter and sorting for the list. They would require no persistence, just pure logic.
+
+---
+
+So the steps on search were
+
+1. Make a state with filters and sorting
+2. Add logic
+3. Write tests with measurement
+4. Refine tests based on inputs
+5. Add UI for search
+6. Test on real app

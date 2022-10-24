@@ -35,3 +35,9 @@ func update<A>(_ a: A, _ fs: ((inout A) -> Void)...) -> A {
     fs.forEach { f in f(&a) }
     return a
 }
+
+extension Collection {
+    var nonEmpty: Self? {
+        isEmpty ? nil : self
+    }
+}

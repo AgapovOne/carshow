@@ -15,7 +15,7 @@ struct AppState {
 
         func apply(to car: Car) -> Bool {
             (price?.contains(car.price) ?? true)
-            && (searchText.map {
+            && (searchText?.nonEmpty.map {
                 car.make.localizedCaseInsensitiveContains($0) || car.model.localizedCaseInsensitiveContains($0)
             } ?? true)
         }
@@ -51,10 +51,19 @@ struct AppState {
         case failed(String)
 
         var loadedState: LoadedState? {
-            if case .loaded(let state) = self {
-                return state
+            get {
+                if case .loaded(let state) = self {
+                    return state
+                }
+                return nil
             }
-            return nil
+            set {
+                if let loadedState = newValue {
+                    self = .loaded(loadedState)
+                } else {
+                    self = .loading
+                }
+            }
         }
     }
     var loadingState: LoadingState
