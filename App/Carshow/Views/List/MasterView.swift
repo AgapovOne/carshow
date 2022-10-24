@@ -31,7 +31,7 @@ struct MasterView: View {
     @MainActor
     func list(_ loadedState: AppState.LoadedState) -> some View {
         List {
-            ForEach(loadedState.filteredCars, id: \.id.rawValue) { car in
+            ForEach(loadedState.displayedCars, id: \.id.rawValue) { car in
                 NavigationLink {
                     DetailView(car: car)
                 } label: { CarRow(car: car) }
@@ -46,7 +46,8 @@ struct MasterView: View {
             let cars = carsResponse.map(Car.init)
             self.state.loadingState = .loaded(
                 .init(
-                    searchText: nil,
+                    filter: nil,
+                    sort: nil,
                     cars: cars
                 )
             )

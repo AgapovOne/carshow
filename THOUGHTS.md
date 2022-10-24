@@ -1,12 +1,16 @@
-- [User Story:](#user-story)
-- [Preface](#preface)
-- [0 Getting request, checking, making a drawings on all I got](#0-getting-request-checking-making-a-drawings-on-all-i-got)
-- [1 Creating an app, making first request inside it and display onscreen.](#1-creating-an-app-making-first-request-inside-it-and-display-onscreen)
-- [2 Prototyping UI](#2-prototyping-ui)
-- [3 Adding business logic](#3-adding-business-logic)
-- [What's done after 4 hrs](#whats-done-after-4-hrs)
+# The process
 
-## User Story:
+- [The process](#the-process)
+    - [User Story:](#user-story)
+    - [Preface](#preface)
+    - [0 Getting request, checking, making a drawings on all I got](#0-getting-request-checking-making-a-drawings-on-all-i-got)
+    - [1 Creating an app, making first request inside it and display onscreen.](#1-creating-an-app-making-first-request-inside-it-and-display-onscreen)
+    - [2 Prototyping UI](#2-prototyping-ui)
+    - [3 Adding business logic](#3-adding-business-logic)
+    - [What's done after 4 hrs](#whats-done-after-4-hrs)
+  - [After 4 hrs](#after-4-hrs)
+
+### User Story:
 
 As a working student, I would like to buy a decent used car without leaving my couch. To do that, I would like to be able to browse used cars on an app, with enough information for me to decide which one is best.
 
@@ -15,7 +19,7 @@ No design
 
 ---
 
-## Preface
+### Preface
 
 I consider our current feedback loop to be slow, so I would rather not come for details. Just making my assumptions and declare some points in this file.
 
@@ -24,7 +28,7 @@ I consider our current feedback loop to be slow, so I would rather not come for 
 - I wanted to become a designer, but it's not my daily job and I didn't practice for years, so I think my process of making UI would be better with SwiftUI/UIKit prototyping in an app, not tldraw/figma or anything else
 - I'll try to make it in 4 hrs with timeline
 
-## 0 Getting request, checking, making a drawings on all I got
+### 0 Getting request, checking, making a drawings on all I got
 
 Checked schema, checked details I got from a backend
 
@@ -70,7 +74,7 @@ What a working student and decent car in user story could mean?
 - Sorting by price?
 - Filtering out by price limit? Other fitlers would be less useful for a **decent** purchase
 
-## 1 Creating an app, making first request inside it and display onscreen.
+### 1 Creating an app, making first request inside it and display onscreen.
 
 App is network based
 
@@ -97,7 +101,9 @@ Filled a Decodable model using json spec.
 - Spec doesn't include Seller model. Why? Filled with data I saw in response
 - API resource is not secure, so I had to add App Transport Security into Info.plist
   - Taking long, cause just allowing everything doesn't work. Have to spend time on this.
-<details><summary>How I fixed issues with ATS</summary>
+
+<details>
+<summary>How I fixed issues with ATS</summary>
 
 Changed url to use https, not http as given in email.
 
@@ -140,7 +146,7 @@ Result of first step is actually checking data is coming with macOS app :)
 <img src="./assets/1-ipad.png"/>
 </details>
 
-## 2 Prototyping UI
+### 2 Prototyping UI
 
 I'll start with state definition without any architecture for now
 
@@ -181,7 +187,7 @@ btw, image loading is done with [Nuke](https://github.com/kean/Nuke) and it's vi
 
 I guess it's time to
 
-## 3 Adding business logic
+### 3 Adding business logic
 
 Will add better UI stacks and other sugar for details screen later.
 
@@ -219,15 +225,11 @@ Timeline:
 
 ---
 
-## What's done after 4 hrs
+### What's done after 4 hrs
 
 [VIDEO](./assets/4hrs.mp4)
 
-
-
-
 https://user-images.githubusercontent.com/4246455/197362007-a76b56a8-7a1c-4fb8-b871-af763aad3333.mp4
-
 
 - Navigation. It would be better to have it in UIKit, but I spent less than a minute on that. In a real world would use FlowControllers in UIKit, use UISplitViewController
 - Master layout in SwiftUI. Had issues with navigation link placement, checked in example of TCA, I think it's okay now, but it SwiftUI, so not ideal. Should show something in details screen on app open in iPad where details is visible at start.
@@ -241,3 +243,13 @@ What's left:
 - Better UI :) Sky is the limit. Probably not needed, cause I showed a lot. Can add uilabel placement and avoid all warnings. Also clean up a little. Navbars, prettiness of current views,
 - View states. Error, loading, empty, message displays.
 - Add to favorites in persistent storage and display status on car
+
+## After 4 hrs
+
+I'll allow myself to spend 1 or 1.5 more hrs. Version after exactly 4 hrs is there if time is the main criteria.
+
+Reread the task. It says **enough information to decide which one is best**.
+
+So probably favourites is not the best idea, but sorting, filtering, searching might help a lot.
+
+So I'll take on the task of making search, filter and sorting for the list. They would require no persistence, just pure logic.

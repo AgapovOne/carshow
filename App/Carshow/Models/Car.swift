@@ -39,14 +39,18 @@ struct Car: Hashable, Identifiable {
     let images: [URL]
     let description: String
 
-    static func example(id: Int) -> Self {
+    static func example(
+        id: Int,
+        make: String = "Ford",
+        price: Int = 30_000
+    ) -> Self {
         .init(
             id: .init(rawValue: id),
-            make: "Ford",
+            make: make,
             model: "Mondeo",
             colour: nil,
-            price: 30000,
-            mileage: 15000,
+            price: price,
+            mileage: 15_000,
             firstRegistration: nil,
             fuel: .diesel,
             seller: .init(type: "Private", phone: "+79992223344", city: "Yekaterinburg"),

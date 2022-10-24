@@ -8,20 +8,41 @@
 import Foundation
 
 struct AppState {
-    struct LoadedState {
+
+    struct Filter {
+        var price: Range<Int>?
         var searchText: String?
+
+        func apply(to car: Car) -> Bool {
+            (price?.contains(car.price) ?? true)
+            && (searchText.map {
+                car.make.localizedCaseInsensitiveContains($0) || car.model.localizedCaseInsensitiveContains($0)
+            } ?? true)
+        }
+    }
+
+    enum Sort {
+        case makeAlphabetically(ascending: Bool)
+        case price(ascending: Bool)
+
+        func apply(to cars: [Car]) -> [Car] {
+            switch self {
+                case let .makeAlphabetically(ascending):
+                    return cars.sorted(by: { ascending ? $0.make < $1.make : $0.make > $1.make })
+                case let .price(ascending):
+                    return cars.sorted(by: { ascending ? $0.price < $1.price : $0.price > $1.price })
+            }
+        }
+    }
+
+    struct LoadedState {
+        var filter: Filter?
+        var sort: Sort?
         var cars: [Car] = []
 
-        var filteredCars: [Car] {
-            switch searchText {
-                case nil:
-                    return cars
-                case let .some(search):
-                    return cars
-                        .filter {
-                            $0.make.localizedCaseInsensitiveContains(search)
-                        }
-            }
+        var displayedCars: [Car] {
+            let filteredCars = filter.map { filters in cars.filter { filters.apply(to: $0) } } ?? cars
+            return sort.map { $0.apply(to: filteredCars) } ?? filteredCars
         }
     }
     enum LoadingState {
