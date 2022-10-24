@@ -240,3 +240,4 @@ What's left:
 - Logic for search/filtering. I won't use TCA for now cause all logic actually is setting search text, then filtering app state cars with get property. Filtering is already done. Hard rules for filters could be there, like multiple case insensitive contains, fuzzy search, filtering by price range. Would add a test for that, but it's all about input and output. Too easy to test in that size of an application.
 - Better UI :) Sky is the limit. Probably not needed, cause I showed a lot. Can add uilabel placement and avoid all warnings. Also clean up a little. Navbars, prettiness of current views,
 - View states. Error, loading, empty, message displays.
+- Add to favorites in persistent storage and display status on car
