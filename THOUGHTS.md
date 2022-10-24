@@ -9,6 +9,8 @@
     - [3 Adding business logic](#3-adding-business-logic)
     - [What's done after 4 hrs](#whats-done-after-4-hrs)
   - [After 4 hrs](#after-4-hrs)
+      - [Timeline](#timeline)
+  - [Total project time is 5hr 10min](#total-project-time-is-5hr-10min)
 
 ### User Story:
 
@@ -264,3 +266,39 @@ So the steps on search were
 4. Refine tests based on inputs
 5. Add UI for search
 6. Test on real app
+7. Add UI for sorting (with SF Symbols slooow lookup)
+
+---
+
+#### Timeline
+
+- [ ] 00:30 start
+- [ ] Search commit in 01:15
+- [ ] Pause at 01:24
+- [ ] Continue 01:35
+- [ ] Finished sorting 01:40
+
+Total 1hr
+
+So the next could be
+
+- better UI for details screen
+- Logic cleanup with dependencies showing how I would inject, test, control mess with mutations, form app persistence and state.
+
+I decided to write it down.
+
+I'm now all in for TCA. For a long time I implemented principles of UDF, State-driven ways, functional programming and Functional Core - Imperative Shell.
+
+I do think that TCA
+
+- controls state and mutations well (reducer and state)
+- manages DI and dependencies (mocks, previews, real implementations are easy especially with new @Dependency)
+- scales well with
+  - performance - via making different stores, implementing isolated parts of stores, using diffing
+  - readability - reducers are pure concepts where everything is handled. Tests are a documentation, well defined type system is the best checker for errors.
+
+But navigation... I would still make it with UIKit and FlowControllers.
+
+Done writing in 10 minutes.
+
+## Total project time is 5hr 10min
